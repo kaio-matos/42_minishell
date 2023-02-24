@@ -24,8 +24,10 @@ NAME				= minishell
 CCF_INCL_MANDATORY	= -I ./$(LIBFT_DIR)/includes -I ./$(SRC_DIR)/$(MANDATORY_DIR)/includes
 
 C_BOOTSTRAP			= $(addprefix bootstrap/, bootstrap.c)
+C_BUILTINS			= $(addprefix builtins/, cd.c echo.c env.c exit.c export.c pwd.c unset.c)
+C_VARIABLES			= $(addprefix variables/, dollar.c)
 
-C_FILES_MANDATORY	= main.c $(C_BOOTSTRAP)
+C_FILES_MANDATORY	= main.c $(C_BOOTSTRAP) $(C_BUILTINS) $(C_VARIABLES)
 FILES_MANDATORY		= $(addprefix $(MANDATORY_DIR)/,$(C_FILES_MANDATORY))
 SRCS_MANDATORY		= $(addprefix src/,$(FILES_MANDATORY))
 OBJS_MANDATORY		= $(addprefix $(OBJS_DIR)/,$(FILES_MANDATORY:.c=.o))
