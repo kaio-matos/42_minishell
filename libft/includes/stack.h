@@ -6,14 +6,14 @@
 /*   By: kmatos-s <kmatos-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 19:54:34 by kmatos-s          #+#    #+#             */
-/*   Updated: 2023/02/21 20:02:44 by kmatos-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 21:57:33 by kmatos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
-
-#include <linked_list.h>
+# include <headers.h>
+# include <linked_list.h>
 
 /******************************************************************************\
 * STACK																		   *

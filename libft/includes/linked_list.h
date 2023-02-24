@@ -6,14 +6,13 @@
 /*   By: kmatos-s <kmatos-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 01:06:58 by kmatos-s          #+#    #+#             */
-/*   Updated: 2023/02/07 19:58:02 by kmatos-s         ###   ########.fr       */
+/*   Updated: 2023/02/23 21:57:43 by kmatos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LINKED_LIST_H
 # define LINKED_LIST_H
-# include <stdlib.h>
-# include <libft.h>
+# include <headers.h>
 
 /******************************************************************************\
 * LINKED LIST																   *
