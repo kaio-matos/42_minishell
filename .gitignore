@@ -6,3 +6,4 @@ a.out
 *.a
 infile
 outfile
+.vscode

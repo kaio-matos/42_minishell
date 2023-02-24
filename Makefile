@@ -21,9 +21,11 @@ endif
 ################################################################################
 
 NAME				= minishell
-CCF_INCL_MANDATORY	= -I ./$(SRC_DIR)/$(MANDATORY_DIR)/includes -I $(LIBFT_DIR)/includes
+CCF_INCL_MANDATORY	= -I ./$(LIBFT_DIR)/includes -I ./$(SRC_DIR)/$(MANDATORY_DIR)/includes
 
-C_FILES_MANDATORY	= main.c
+C_BOOTSTRAP			= $(addprefix bootstrap/, bootstrap.c)
+
+C_FILES_MANDATORY	= main.c $(C_BOOTSTRAP)
 FILES_MANDATORY		= $(addprefix $(MANDATORY_DIR)/,$(C_FILES_MANDATORY))
 SRCS_MANDATORY		= $(addprefix src/,$(FILES_MANDATORY))
 OBJS_MANDATORY		= $(addprefix $(OBJS_DIR)/,$(FILES_MANDATORY:.c=.o))
