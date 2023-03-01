@@ -9,7 +9,7 @@ CCF_STRICT			= -Wall -Wextra -Werror
 CCF_DEBUG			= -g3 -D VERBOSE=1
 
 LIBFT				= $(LIBFT_DIR)/libft.a
-LIBS				= $(LIBFT)
+LIBS				= $(LIBFT) -lreadline
 RM					= rm -rf
 
 ifdef VERBOSE
@@ -26,8 +26,10 @@ CCF_INCL_MANDATORY	= -I ./$(LIBFT_DIR)/includes -I ./$(SRC_DIR)/$(MANDATORY_DIR)
 C_BOOTSTRAP			= $(addprefix bootstrap/, bootstrap.c)
 C_BUILTINS			= $(addprefix builtins/, cd.c echo.c env.c exit.c export.c pwd.c unset.c)
 C_VARIABLES			= $(addprefix variables/, dollar.c)
+C_INPUT				= $(addprefix input/, i__request_command.c i__parse_command.c)
+C_CASTING			= $(addprefix casting/, c__int.c c__str.c)
 
-C_FILES_MANDATORY	= main.c $(C_BOOTSTRAP) $(C_BUILTINS) $(C_VARIABLES)
+C_FILES_MANDATORY	= main.c $(C_BOOTSTRAP) $(C_BUILTINS) $(C_VARIABLES) $(C_INPUT) $(C_CASTING)
 FILES_MANDATORY		= $(addprefix $(MANDATORY_DIR)/,$(C_FILES_MANDATORY))
 SRCS_MANDATORY		= $(addprefix src/,$(FILES_MANDATORY))
 OBJS_MANDATORY		= $(addprefix $(OBJS_DIR)/,$(FILES_MANDATORY:.c=.o))

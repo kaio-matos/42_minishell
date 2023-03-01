@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   c__str.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmatos-s <kmatos-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 19:42:25 by kmatos-s          #+#    #+#             */
-/*   Updated: 2023/02/28 22:10:36 by kmatos-s         ###   ########.fr       */
+/*   Created: 2023/02/28 21:57:19 by kmatos-s          #+#    #+#             */
+/*   Updated: 2023/02/28 22:12:13 by kmatos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <minishell.h>
 
-t_shell	*sh;
-
-int	main(int argc, char **argv, char **envp)
+char	**c__new_str(char *value)
 {
-	t_command	command;
+	char	**heaped_value;
 
-	sh = bootstrap_sh(argc, argv, envp);
-	while (1)
-	{
-		command = i__request_command();
-		printf("%s\n", command.raw);
-		printf("%s\n", c__get_str(command.flags->content));
-	}
-	return (0);
+	heaped_value = ft_salloc(sizeof(char *));
+	*heaped_value = value;
+	return (heaped_value);
+}
+
+char	*c__get_str(void *content)
+{
+	if (content == NULL)
+		ft_exterr("Trying to extract string from NULL\n");
+	return (*(char **)content);
 }
