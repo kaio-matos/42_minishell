@@ -6,7 +6,7 @@
 /*   By: kmatos-s <kmatos-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 01:06:58 by kmatos-s          #+#    #+#             */
-/*   Updated: 2023/02/28 22:13:30 by kmatos-s         ###   ########.fr       */
+/*   Updated: 2023/03/02 21:26:43 by kmatos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,25 @@ typedef struct s_command
 	char		*executable;
 	t_bool		is_builtin;
 }	t_command;
+
+typedef enum e_token_type
+{
+	PIPE,			// |					- allow the redirection of outputs
+	RDRT_INPUT,		// <					- input redirection
+	RDRT_O_OUTPUT,	// >					- is used to overwrite
+	HERE_DOC,		// <<					- allow the creation of a "local file" inside the terminal. Ex: `cat << EOF`
+	RDRT_A_OUTPUT,	// >>					- is used to append
+	COMMAND,		// /bin files commands
+	BUILTIN			// builtin commands
+}	t_token_type;
+
+
+typedef struct s_token
+{
+	char			*raw;
+	t_token_type	type;
+}	t_token;
+
 
 typedef struct s_shell
 {
